@@ -1,6 +1,9 @@
+import {isEscapeKey, getActiveFullPicture, hideElement} from './util.js';
 import {createArrayOfObjects} from './data.js';
 import {createPhotoThumb} from './generate-thumbs.js';
-import {showBigPicture, getActiveFullPicture, hideElement, bigPictureSection} from './full-photo.js';
+import {showBigPicture, bigPictureSection} from './full-photo.js';
+import {} from './openCloseForm.js';
+import './validityForm.js';
 
 const ADS_NUMBER = 25;
 const userPhotosFragment = document.createDocumentFragment();
@@ -19,7 +22,7 @@ otherUsersPhotoSection.append(userPhotosFragment);
 
 //Обработчик нажатия клавиши ESC
 const onBigPictureEscDown = (evt) => {
-  if (evt.key === 'Escape') {
+  if (isEscapeKey(evt)) {
     evt.preventDefault();
     closeBigPicture();
   }
@@ -48,8 +51,8 @@ function closeBigPicture () {
 
 //Обработчик клика по миниатюрам
 const onThumbClick = (evt) => {
-  evt.preventDefault();
-  if (evt.target.closest('.picture')) {
+  if (evt.target.closest('.picture') && evt.target.matches('.picture__img')) {
+    evt.preventDefault();
     openBigPicture();
     const numberObjData = evt.target.src.match(/[0-9]{1,3}/g)[2];
     showBigPicture(allPhotoUsers[numberObjData - 1]);

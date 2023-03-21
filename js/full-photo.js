@@ -1,15 +1,7 @@
+import {getActiveFullPicture, hideElement} from './util.js';
+
 const socialCommentsList = document.querySelector('.social__comments');
 const bigPictureSection = document.querySelector('.big-picture');
-
-//Функция, которая делает видимым элемент(например, удаляет с него класс hidden)
-const getActiveFullPicture = (element, nameClass) => {
-  element.classList.remove(nameClass);
-};
-
-//Функция, которая делает невидимым элемент(например, добавляет ему класс hidden)
-const hideElement = (element, nameClass) => {
-  element.classList.add(nameClass);
-};
 
 const createCommentsUser = (arrayCommentsUser) => {
   arrayCommentsUser.forEach((itemObj) => {
@@ -46,4 +38,4 @@ const showBigPicture = (userObject) => {
   bigPictureCaption.textContent = userObject.description;
 };
 
-export {showBigPicture, getActiveFullPicture, hideElement, bigPictureSection};
+export {showBigPicture, bigPictureSection};
