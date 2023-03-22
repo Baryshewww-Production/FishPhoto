@@ -7,7 +7,7 @@ const formRedactPicture = document.querySelector('.img-upload__overlay');
 const openFormButton = document.querySelector('#upload-file');
 const closeFormButton = document.querySelector('#upload-cancel');
 
-//Функция закрытия формы при нажатии клавиши ESC
+// Функция закрытия формы при нажатии клавиши ESC
 const onFormUploadEscDown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
@@ -15,12 +15,12 @@ const onFormUploadEscDown = (evt) => {
   }
 };
 
-//Функция закрытия формы по клику на кнопку закрытия
+// Функция закрытия формы по клику на кнопку закрытия
 const onButtonFormCloseCLick = () => {
   closeFormUpload();
 };
 
-//Функция открытия формы (с добавлением обработчиков закрытия)
+// Функция открытия формы (с добавлением обработчиков закрытия)
 function openFormUpload() {
   formRedactPicture.classList.remove('hidden');
   body.classList.add('modal-open');
@@ -30,7 +30,7 @@ function openFormUpload() {
   inputComment.addEventListener('input', onInputCommentValidityInput);
 }
 
-//Функция закрытия формы (с удалением обработчиков закрытия)
+// Функция закрытия формы (с удалением обработчиков закрытия)
 function closeFormUpload() {
   formRedactPicture.classList.add('hidden');
   body.classList.remove('modal-open');
