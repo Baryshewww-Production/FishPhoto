@@ -1,4 +1,4 @@
-//Функция, которая возвращает целое положительное число из заданного диапазона
+// Функция, которая возвращает целое положительное число из заданного диапазона
 const getRandomPositiveInteger = (first, second) => {
   const lower = Math.ceil(Math.min(Math.abs(first), Math.abs(second)));
   const upper = Math.floor(Math.max(Math.abs(first), Math.abs(second)));
@@ -6,19 +6,20 @@ const getRandomPositiveInteger = (first, second) => {
   return Math.floor(result);
 };
 
-//Функция, которая возвращает случайный элемент из переданного массива
+// Функция, которая возвращает случайный элемент из переданного массива
 const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
+// Функция проверки нажатой клавиши, является ли она Escape или нет
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
-//Функция, которая делает видимым элемент(например, удаляет с него класс hidden)
-const getActiveFullPicture = (element, nameClass) => {
-  element.classList.remove(nameClass);
+// Функция, которая добавляет элементу класс hidden и убирает его, в зависимости от переданного булева значения
+const toggleElementHidden = (element, isHidden) => {
+  element.classList.toggle('hidden', isHidden);
 };
 
-//Функция, которая делает невидимым элемент(например, добавляет ему класс hidden)
-const hideElement = (element, nameClass) => {
-  element.classList.add(nameClass);
+export {
+  getRandomArrayElement,
+  getRandomPositiveInteger,
+  isEscapeKey,
+  toggleElementHidden
 };
-
-export {getRandomArrayElement, getRandomPositiveInteger, isEscapeKey, getActiveFullPicture, hideElement};
