@@ -1,5 +1,4 @@
-import {openSuccessSendMessage, openErrorSendMessage} from './errors.js';
-import {showAlert} from './util.js';
+import { showAlert } from './util.js';
 
 const getData = (onSuccess) => {
   fetch('https://27.javascript.pages.academy/kekstagram/data')
@@ -24,10 +23,10 @@ const sendData = (onSuccess, onFail, body) => {
     },
   )
     .then((response) => {
-      response.ok ? openSuccessSendMessage() : openErrorSendMessage();
+      response.ok ? onSuccess() : onFail();
     })
     .catch(() => {
-      openErrorSendMessage();
+      onFail();
     });
 };
 
