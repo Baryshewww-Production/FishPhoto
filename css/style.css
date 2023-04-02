@@ -366,6 +366,24 @@ main {
   outline: auto 5px highlight;
 }
 
+.img-upload__element {
+  position: relative;
+}
+
+.img-upload__error {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  text-transform: none;
+  color: #dc1d34;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 /* Окно для редактирования изображения
    ========================================================================== */
@@ -688,6 +706,7 @@ main {
   height: 100px;
 
   margin: 0 auto;
+  margin-bottom: 15px;
   padding: 15px 10px;
 
   font-family: "Open Sans", "Arial", sans-serif;
