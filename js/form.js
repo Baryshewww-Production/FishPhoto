@@ -1,6 +1,7 @@
 import { isEscapeKey, showAlert, toggleElementHidden } from './util.js';
 import { sendData } from './api.js';
-import {openSuccessSendMessage} from './errors.js';
+import { openSuccessSendMessage } from './errors.js';
+import { resetScale } from './picture-editing.js';
 
 const body = document.querySelector('body');
 const form = document.querySelector('.img-upload__form');
@@ -54,6 +55,7 @@ function closeUploadOverlay () {
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onEscKeydown);
   uploadCloseButton.removeEventListener('click', closeUploadOverlay);
+  resetScale();
 }
 
 // Функция, которая вернет true если строчка начинается со знака #
