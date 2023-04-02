@@ -1,3 +1,7 @@
-import './full-photo.js';
-import './openCloseForm.js';
-import './validityForm.js';
+import { renderPictures } from './thumbnails.js';
+import './form.js';
+import './picture-preview.js';
+import './picture-editing.js';
+import { getData } from './api.js';
+
+getData(renderPictures);
